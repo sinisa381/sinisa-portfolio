@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Text from '../../components/Text';
+import Container from '../../components/Container';
 import { Space } from '../../components/Space';
 export default function Card({ bg, src, title, text, href, order }) {
   return (
@@ -7,33 +8,49 @@ export default function Card({ bg, src, title, text, href, order }) {
       <ImageWrapper bg={bg} order={order}>
         <Image src={src} />
       </ImageWrapper>
-      <div>
-        <Title>{title}</Title>
-        <Space height={60} />
-        <StyledText>{text}</StyledText>
-        <Space height={20} />
-        <Button href={href} target="_blank" rel="noopener noreferrer">
-          <ButtonText as="span">View site</ButtonText>
-        </Button>
-      </div>
+      <Container>
+        <Block>
+          <Spacer />
+          <Title>{title}</Title>
+          <StyledSpace height={60} />
+          <StyledText>{text}</StyledText>
+          <Space height={20} />
+          <Button href={href} target="_blank" rel="noopener noreferrer">
+            <ButtonText as="span">View site</ButtonText>
+          </Button>
+        </Block>
+      </Container>
     </Wrapper>
   );
 }
+
+const Block = styled.div`
+  max-width: 450px;
+  width: 100%;
+`;
 
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
   align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media (max-width: 900px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 const Image = styled.img`
-  width: 341px;
-  height: 269px;
+  max-width: 341px;
+  width: 100%;
+  /* height: 269px; */
 `;
 const ImageWrapper = styled.div`
   order: ${({ order }) => (order === 1 ? 2 : 0)};
-  margin-right: ${({ order }) => (order === 0 ? 56 : 0)}px;
-  margin-left: ${({ order }) => (order === 1 ? 56 : 0)}px;
+  @media (max-width: 900px) {
+    order: 0;
+  }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,4 +115,17 @@ const ButtonText = styled(Text)`
   align-items: center;
   color: rgba(49, 49, 49, 0.6);
   padding: 5px 0;
+`;
+
+const Spacer = styled.div`
+  height: 0;
+  @media (max-width: 900px) {
+    height: 20px;
+  }
+`;
+
+const StyledSpace = styled(Space)`
+  @media (max-width: 900px) {
+    height: 40px;
+  }
 `;

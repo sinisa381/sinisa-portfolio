@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Container from './components/Container';
 import { Space } from './components/Space';
 import About from './pages/About';
 import Work from './pages/Work';
@@ -26,26 +27,24 @@ const NAV_DATA = [
 function App() {
   return (
     <Wrapper>
-      <Container>
-        <Space height={17} />
-        <Router>
-          <header>
-            <Navigation data={NAV_DATA} />
-          </header>
-          <Space height={167} />
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/">
-              <Work />
-            </Route>
-          </Switch>
-        </Router>
-      </Container>
+      <Space height={17} />
+      <Router>
+        <header>
+          <Navigation data={NAV_DATA} />
+        </header>
+        <Space height={167} />
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/">
+            <Work />
+          </Route>
+        </Switch>
+      </Router>
       <Footer>
         <Container>
           <FooterWrapper>
@@ -69,11 +68,6 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-`;
-
-const Container = styled.div`
-  width: 100%;
-  max-width: 1136px;
 `;
 
 const FooterWrapper = styled.div`

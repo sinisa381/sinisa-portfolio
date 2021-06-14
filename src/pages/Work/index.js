@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Text from '../../components/Text';
 import { Space } from '../../components/Space';
 import Card from '../../components/Card';
+import Container from '../../components/Container';
 const CARDS = [
   {
     src: '/ofish.png',
@@ -28,22 +29,24 @@ const CARDS = [
 function Work() {
   return (
     <div>
-      <CodeText>HELLO</CodeText>
-      <Space height={25} />
-      <Copy width={'Sinisa Colic is a front-end developer,'.length}>
-        <Title>
-          Sinisa Colic is a front-end developer, building functional and
-          intuitive websites.
-        </Title>
-      </Copy>
-      <Space height={40} />
-      <SkillsWrapper>
-        <SkillsText>REACT</SkillsText>
-        <Line />
-        <SkillsText>JAVASCRIPT</SkillsText>
-        <Line />
-        <SkillsText>SCSS</SkillsText>
-      </SkillsWrapper>
+      <Container>
+        <CodeText>HELLO</CodeText>
+        <Space height={25} />
+        <Copy width={'Sinisa Colic is a front-end developer,'.length}>
+          <Title>
+            Sinisa Colic is a front-end developer, building functional and
+            intuitive websites.
+          </Title>
+        </Copy>
+        <Space height={40} />
+        <SkillsWrapper>
+          <SkillsText>REACT</SkillsText>
+          <Line />
+          <SkillsText>JAVASCRIPT</SkillsText>
+          <Line />
+          <SkillsText>SCSS</SkillsText>
+        </SkillsWrapper>
+      </Container>
       <Space height={219} />
       {CARDS.map((card, i) => (
         <div key={i}>
