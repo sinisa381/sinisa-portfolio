@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Container({ children }) {
+export default function Container({ children, className }) {
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <Margin>{children}</Margin>
     </Wrapper>
   );

@@ -5,20 +5,22 @@ import styled from 'styled-components';
 function Navigation({ data }) {
   const [selected, setSelected] = useState(0);
   return (
-    <nav>
-      <NavigationContainer>
-        <AnimateSharedLayout>
-          {data.map((item, i) => (
-            <Wrapper animate key={item.text} onClick={() => setSelected(i)}>
-              {i === selected && <Underline layoutId="underline" />}
-              <StyledLink to={item.linkTo}>
-                {item.text.toUpperCase()}
-              </StyledLink>
-            </Wrapper>
-          ))}
-        </AnimateSharedLayout>
-      </NavigationContainer>
-    </nav>
+    <header>
+      <nav>
+        <NavigationContainer>
+          <AnimateSharedLayout>
+            {data.map((item, i) => (
+              <Wrapper animate key={item.text} onClick={() => setSelected(i)}>
+                {i === selected && <Underline layoutId="underline" />}
+                <StyledLink to={item.linkTo}>
+                  {item.text.toUpperCase()}
+                </StyledLink>
+              </Wrapper>
+            ))}
+          </AnimateSharedLayout>
+        </NavigationContainer>
+      </nav>
+    </header>
   );
 }
 export default Navigation;

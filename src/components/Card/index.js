@@ -1,15 +1,16 @@
 import styled from 'styled-components';
-import Text from '../../components/Text';
+import Text, { Title as CardTitle } from '../../components/Text';
 import Container from '../../components/Container';
 import { Space } from '../../components/Space';
 export default function Card({ bg, src, title, text, href, order }) {
+  console.log(order);
   return (
     <Wrapper>
       <ImageWrapper bg={bg} order={order}>
         <Image src={src} />
       </ImageWrapper>
-      <Container>
-        <Block>
+      <StyledContainer>
+        <Block order={order}>
           <Spacer />
           <Title>{title}</Title>
           <StyledSpace height={60} />
@@ -18,8 +19,9 @@ export default function Card({ bg, src, title, text, href, order }) {
           <Button href={href} target="_blank" rel="noopener noreferrer">
             <ButtonText as="span">View site</ButtonText>
           </Button>
+          <StyledSpace height={20} />
         </Block>
-      </Container>
+      </StyledContainer>
     </Wrapper>
   );
 }
@@ -27,6 +29,11 @@ export default function Card({ bg, src, title, text, href, order }) {
 const Block = styled.div`
   max-width: 450px;
   width: 100%;
+  /* flex-grow: 1; */
+  margin-left: ${({ order }) => order === 0 && 'auto'};
+  @media (max-width: 900px) {
+    margin-left: 0;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -34,11 +41,13 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   align-items: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
   @media (max-width: 900px) {
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex-direction: column-reverse;
   }
 `;
 const Image = styled.img`
@@ -47,7 +56,7 @@ const Image = styled.img`
   /* height: 269px; */
 `;
 const ImageWrapper = styled.div`
-  order: ${({ order }) => (order === 1 ? 2 : 0)};
+  order: ${({ order }) => order === 1 && 2};
   @media (max-width: 900px) {
     order: 0;
   }
@@ -80,9 +89,14 @@ const Button = styled.a`
   align-items: center;
   color: rgba(49, 49, 49, 0.6);
   max-width: 100px;
+  transition: all 250ms;
+  &:hover {
+    color: rgba(49, 49, 49, 1);
+    border: 2px solid rgba(49, 49, 49, 1);
+  }
 `;
 
-const Title = styled(Text)`
+const Title = styled(CardTitle)`
   font-family: Raleway;
   font-style: normal;
   font-weight: 500;
@@ -113,12 +127,12 @@ const ButtonText = styled(Text)`
   line-height: 27px;
   display: flex;
   align-items: center;
-  color: rgba(49, 49, 49, 0.6);
   padding: 5px 0;
 `;
 
 const Spacer = styled.div`
   height: 0;
+  height: 20px;
   @media (max-width: 900px) {
     height: 20px;
   }
@@ -127,5 +141,18 @@ const Spacer = styled.div`
 const StyledSpace = styled(Space)`
   @media (max-width: 900px) {
     height: 40px;
+  }
+`;
+
+const StyledContainer = styled(Container)`
+  @media (max-width: 900px) {
+    /* order: ${({ order }) => (order === 1 ? 2 : 0)}; */
+    order: -1;
+    margin: 0 auto;
+    flex-grow: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 `;

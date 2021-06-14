@@ -38,7 +38,7 @@ function Work() {
             intuitive websites.
           </Title>
         </Copy>
-        <Space height={40} />
+        <StyledSpace height={40} />
         <SkillsWrapper>
           <SkillsText>REACT</SkillsText>
           <Line />
@@ -47,11 +47,11 @@ function Work() {
           <SkillsText>SCSS</SkillsText>
         </SkillsWrapper>
       </Container>
-      <Space height={219} />
+      <StyledSpace height={219} maxHeight={120} />
       {CARDS.map((card, i) => (
         <div key={i}>
           <Card key={i} {...card} order={i % 2} />
-          <Space height={145} />
+          <StyledSpace height={145} maxHeight={90} />
         </div>
       ))}
     </div>
@@ -108,4 +108,10 @@ const Line = styled.div`
   width: 30px;
   background: rgba(49, 49, 49, 0.5);
   margin: 0px 15px;
+`;
+
+const StyledSpace = styled(Space)`
+  @media (max-width: 900px) {
+    height: ${({ maxHeight }) => maxHeight && maxHeight}px;
+  }
 `;

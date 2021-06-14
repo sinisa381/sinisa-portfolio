@@ -29,10 +29,10 @@ function App() {
     <Wrapper>
       <Space height={17} />
       <Router>
-        <header>
+        <Container>
           <Navigation data={NAV_DATA} />
-        </header>
-        <Space height={167} />
+        </Container>
+        <StyledSpace height={167} />
         <Switch>
           <Route path="/about">
             <About />
@@ -84,4 +84,10 @@ const StyledText = styled(Text)`
   line-height: 27px;
   letter-spacing: 0.05em;
   color: #313131;
+`;
+
+const StyledSpace = styled(Space)`
+  @media (max-width: 900px) {
+    height: 100px;
+  }
 `;

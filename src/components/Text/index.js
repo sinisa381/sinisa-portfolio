@@ -7,6 +7,14 @@ function Text({ children, as, ...props }) {
     </Wrapper>
   );
 }
+
+export const Title = ({ children, as, ...props }) => {
+  return (
+    <Wrapper {...props}>
+      <ContentTitle as={as}>{children}</ContentTitle>
+    </Wrapper>
+  );
+};
 export default Text;
 
 const Wrapper = styled.div`
@@ -16,8 +24,11 @@ const Wrapper = styled.div`
   color: ${({ color }) => (color ? color : '#000000')};
 `;
 
-const Content = styled.div`
+const Content = styled.p`
   font-size: 100%;
+`;
+
+const ContentTitle = styled(Content)`
   @media (max-width: 1024px) {
     font-size: 80%;
   }
