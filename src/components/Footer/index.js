@@ -6,8 +6,8 @@ export default function Footer({ children }) {
 }
 
 const Wrapper = styled.footer`
-  background: #e4e3e3;
-  min-height: 241px;
+  background: rgba(228, 227, 227, 0.8);
+  min-height: 141px;
   width: 100%;
   display: flex;
   justify-content: center;

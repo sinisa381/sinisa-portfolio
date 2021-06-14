@@ -33,10 +33,10 @@ function Work() {
         <CodeText>HELLO</CodeText>
         <Space height={25} />
         <Copy width={'Sinisa Colic is a front-end developer,'.length}>
-          <Title>
-            Sinisa Colic is a front-end developer, building functional and
-            intuitive websites.
-          </Title>
+          <StyledTitle>
+            Sinisa Colic is a front-end developer,
+            <br /> building functional and intuitive websites.
+          </StyledTitle>
         </Copy>
         <StyledSpace height={40} />
         <SkillsWrapper>
@@ -61,7 +61,7 @@ function Work() {
 export default Work;
 
 const Copy = styled.div`
-  max-width: 90ch;
+  max-width: 900px;
   width: 100%;
 `;
 
@@ -83,7 +83,7 @@ const SkillsText = styled(Text)`
   color: #313131;
 `;
 
-const Title = styled(Text)`
+const StyledTitle = styled(Text)`
   font-family: Raleway;
   font-style: normal;
   font-weight: 500;

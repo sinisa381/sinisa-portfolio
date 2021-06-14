@@ -96,7 +96,7 @@ const Button = styled.a`
   }
 `;
 
-const Title = styled(CardTitle)`
+export const Title = styled(CardTitle)`
   font-family: Raleway;
   font-style: normal;
   font-weight: 500;
