@@ -1,22 +1,20 @@
-import styled from 'styled-components';
-import Text from '../../components/Text';
-import { Title } from '../../components/Card';
-import { Space } from '../../components/Space';
-import Container from '../../components/Container';
-import Computers from '../../components/Computers';
+import styled from "styled-components";
+import Text from "../../components/Text";
+import { Title } from "../../components/Card";
+import { Space } from "../../components/Space";
+import Container from "../../components/Container";
+import Computers from "../../components/Computers";
 const CARDS = [
-  'React (Hooks and Context)',
-  'Javascript',
-  'SCSS',
-  'HTML',
-  'Styled Components',
-  'Material UI',
-  'Tailwind',
-  'Redux',
-  'Bootstrap',
+  "React (Hooks and Context)",
+  "Javascript",
+  "SCSS",
+  "HTML",
+  "Styled Components",
+  "Material UI",
+  "Tailwind",
+  "Redux",
+  "Bootstrap",
 ];
-console.log(CARDS.slice(0, 5));
-console.log(CARDS.slice(5));
 function About() {
   return (
     <>
@@ -51,8 +49,8 @@ function About() {
           </Container>
         </TextWrapper>
         <StyledSpace width={50} maxHeight={100} height={0} />
-        <ImageWrapper bg={'rgba(49, 49, 49, 0.4)'}>
-          <Image src={'/ofish.png'} />
+        <ImageWrapper bg={"rgba(49, 49, 49, 0.4)"}>
+          <Image src={"/ofish.png"} />
         </ImageWrapper>
       </Wrapper>
       <StyledSpace height={90} maxHeight={50} />
@@ -66,7 +64,7 @@ function About() {
             {CARDS.slice(0, 5).map((tech, i, arr) => (
               <StyledText
                 key={i}
-                style={{ marginBottom: i !== arr.length && '25px' }}
+                style={{ marginBottom: i !== arr.length && "25px" }}
               >
                 {tech}
               </StyledText>
@@ -76,7 +74,7 @@ function About() {
             {CARDS.slice(5).map((tech, i, arr) => (
               <StyledText
                 key={i}
-                style={{ marginBottom: i !== arr.length && '25px' }}
+                style={{ marginBottom: i !== arr.length && "25px" }}
               >
                 {tech}
               </StyledText>
@@ -95,13 +93,12 @@ export default About;
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: nowrap;
-  max-width: 1200px;
-  width: 100%;
 
   @media (max-width: 1000px) {
     flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 

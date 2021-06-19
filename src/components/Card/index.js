@@ -1,47 +1,79 @@
+import { useContext } from "react";
 import styled from "styled-components";
 import Text, { Title as CardTitle } from "../../components/Text";
-import Container from "../../components/Container";
 import { Space } from "../../components/Space";
+import { ViewportContext } from "../../context";
 export default function Card({ bg, src, title, text, href, order }) {
+  const { width } = useContext(ViewportContext);
+  const isMobile = width < 1000;
   return (
-    <Wrapper>
-      <ImageWrapper bg={bg} order={order}>
-        <Image src={src} />
-      </ImageWrapper>
-      <StyledContainer>
-        <Block order={order}>
-          <Spacer />
-          <Title>{title}</Title>
-          <StyledSpace height={60} />
-          <StyledText>{text}</StyledText>
+    <>
+      <Wrapper>
+        <ImageWrapper bg={bg} order={order}>
+          <Image src={src} />
+        </ImageWrapper>
+        <Spacer order={order} width={60} />
+        <Padding>
+          <StyledContainer>
+            <Block order={order}>
+              <Title>{title}</Title>
+              <StyledSpace height={60} />
+              <StyledText>{text}</StyledText>
+              {!isMobile && (
+                <>
+                  <Space height={20} />
+                  <Button href={href} target="_blank" rel="noopener noreferrer">
+                    <ButtonText as="span">View site</ButtonText>
+                  </Button>
+                </>
+              )}
+              <StyledSpace height={20} />
+            </Block>
+          </StyledContainer>
+        </Padding>
+      </Wrapper>
+      {isMobile && (
+        <Padding>
           <Space height={20} />
           <Button href={href} target="_blank" rel="noopener noreferrer">
             <ButtonText as="span">View site</ButtonText>
           </Button>
-          <StyledSpace height={20} />
-        </Block>
-      </StyledContainer>
-    </Wrapper>
+        </Padding>
+      )}
+    </>
   );
 }
 
+const StyledContainer = styled.div`
+  @media (max-width: 1000px) {
+    margin: 0 auto;
+  }
+`;
+const Padding = styled.div`
+  padding: 0 15px;
+`;
+
 const Block = styled.div`
-  max-width: 450px;
+  max-width: 440px;
   width: 100%;
-  margin-left: ${({ order }) => order === 0 && "auto"};
-  @media (max-width: 900px) {
-    margin-left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-items: ${({ order }) => (order === 0 ? "flex-start" : "flex-end")};
+  flex-direction: column;
+  text-align: ${({ order }) => (order === 1 ? "right" : "left")};
+  @media (max-width: 1000px) {
+    align-items: flex-start;
+    text-align: left;
   }
 `;
 
 const Wrapper = styled.div`
   display: flex;
-  width: 100%;
-  height: 100%;
   align-items: flex-start;
+  justify-content: center;
   flex-wrap: nowrap;
-  justify-content: space-between;
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -49,21 +81,17 @@ const Wrapper = styled.div`
   }
 `;
 const Image = styled.img`
-  max-width: 441px;
+  max-width: 360px;
   width: 100%;
-  /* height: 269px; */
 `;
 const ImageWrapper = styled.div`
   order: ${({ order }) => order === 1 && 2};
   @media (max-width: 1000px) {
     order: 0;
   }
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: ${({ bg }) => bg && bg};
   padding: 43px 69px;
-  @media (max-width: 1024px) {
+  @media (max-width: 1000px) {
     padding: 23px 39px;
   }
 `;
@@ -91,6 +119,9 @@ const Button = styled.a`
   &:hover {
     color: rgba(49, 49, 49, 1);
     border: 2px solid rgba(49, 49, 49, 1);
+  }
+  @media (max-width: 1000px) {
+    /* order: 1; */
   }
 `;
 
@@ -128,29 +159,12 @@ const ButtonText = styled(Text)`
   padding: 5px 0;
 `;
 
-const Spacer = styled.div`
-  height: 0;
-  height: 20px;
-  @media (max-width: 900px) {
-    height: 20px;
-  }
+const Spacer = styled(Space)`
+  order: ${({ order }) => order === 1 && order};
 `;
 
 const StyledSpace = styled(Space)`
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     height: 40px;
-  }
-`;
-
-const StyledContainer = styled(Container)`
-  @media (max-width: 900px) {
-    /* order: ${({ order }) => (order === 1 ? 2 : 0)}; */
-    order: -1;
-    margin: 0 auto;
-    flex-grow: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
   }
 `;

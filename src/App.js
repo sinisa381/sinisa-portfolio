@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Text from "./components/Text";
+import ViewportProvider from "./context";
 
 const NAV_DATA = [
   {
@@ -26,33 +27,31 @@ const NAV_DATA = [
 
 function App() {
   return (
-    <Wrapper>
-      <Space height={17} />
-      <Router>
-        <Container>
-          <Navigation data={NAV_DATA} />
-        </Container>
-        <StyledSpace height={167} />
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/">
-            <Work />
-          </Route>
-        </Switch>
-      </Router>
-      <Footer>
-        <Container>
-          <FooterWrapper>
-            <StyledText>&copy; Sinisa Colic</StyledText>
-          </FooterWrapper>
-        </Container>
-      </Footer>
-    </Wrapper>
+    <ViewportProvider>
+      <Wrapper>
+        <Space height={17} />
+        <Router>
+          <Container>
+            <Navigation data={NAV_DATA} />
+          </Container>
+          <StyledSpace height={167} />
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/">
+              <Work />
+            </Route>
+          </Switch>
+        </Router>
+        <Footer>
+          <StyledText>&copy; Sinisa Colic</StyledText>
+        </Footer>
+      </Wrapper>
+    </ViewportProvider>
   );
 }
 
@@ -65,14 +64,9 @@ const Wrapper = styled.div`
   background: #f4f4f4;
   font-family: Poppins, sans-serif;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-`;
-
-const FooterWrapper = styled.div`
-  display: grid;
-  place-items: center;
 `;
 
 const StyledText = styled(Text)`
