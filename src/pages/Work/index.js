@@ -25,6 +25,27 @@ const CARDS = [
     href: "https://60cd14c1bc28c9949d0ff968--gallant-noether-78913e.netlify.app/",
     bg: "#A5D2AF",
   },
+  {
+    src: "/ofish.png",
+    title: "O Fish",
+    text: "O Fish, designed to be a fish shop, is one of the projects I coded when working at Creative Development Hub - TheHive.rs",
+    href: "https://ofish.thehive.rs/",
+    bg: "rgba(135, 198, 255, 0.5);",
+  },
+  {
+    src: "/packman.png",
+    title: "Podcast Website",
+    text: "Website coded as a platform to easily and quickly deliver packages throughout the city and much more. This project was done as a part of the team at Creative Development Hub - TheHive.",
+    href: "https://vibrant-borg-fc07a5.netlify.app/",
+    bg: "rgba(248, 203, 87, 0.8)",
+  },
+  {
+    src: "/marija.png",
+    title: "O Fish",
+    text: "Initial idea of the website was to help users to customize gifts for loved ones. I was involved in the project during my freelance time.",
+    href: "https://60cd14c1bc28c9949d0ff968--gallant-noether-78913e.netlify.app/",
+    bg: "#A5D2AF",
+  },
 ];
 function Work() {
   return (
