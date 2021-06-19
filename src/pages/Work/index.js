@@ -1,29 +1,29 @@
-import styled from 'styled-components';
-import Text from '../../components/Text';
-import { Space } from '../../components/Space';
-import Card from '../../components/Card';
-import Container from '../../components/Container';
+import styled from "styled-components";
+import Text from "../../components/Text";
+import { Space } from "../../components/Space";
+import Card from "../../components/Card";
+import Container from "../../components/Container";
 const CARDS = [
   {
-    src: '/ofish.png',
-    title: 'O Fish',
-    text: 'Designed to be a fish shop, is one of the projects I made working at Creative Development Hub - TheHive.rs.',
-    href: 'https://ofish.thehive.rs',
-    bg: 'rgba(135, 198, 255, 0.5);',
+    src: "/ofish.png",
+    title: "O Fish",
+    text: "Designed to be a fish shop, is one of the projects I made working at Creative Development Hub - TheHive.rs.",
+    href: "https://ofish.thehive.rs/",
+    bg: "rgba(135, 198, 255, 0.5);",
   },
   {
-    src: '/ofish.png',
-    title: 'Podcast Website',
-    text: 'Website coded as a platform where users can find  collection of podcasts across globe.',
-    href: 'https://ofish.thehive.rs',
-    bg: '#FF9B8E',
+    src: "/packman.png",
+    title: "Podcast Website",
+    text: "Website coded as a platform where users can find  collection of podcasts across globe.",
+    href: "https://vibrant-borg-fc07a5.netlify.app/",
+    bg: "#F8CB57",
   },
   {
-    src: '/ofish.png',
-    title: 'O Fish',
-    text: 'Designed to be a fish shop, is one of the projects I made working at Creative Development Hub - TheHive.rs.',
-    href: 'https://ofish.thehive.rs',
-    bg: '#A5D2AF',
+    src: "/marija.png",
+    title: "O Fish",
+    text: "Designed to be a fish shop, is one of the projects I made working at Creative Development Hub - TheHive.rs.",
+    href: "https://60cd14c1bc28c9949d0ff968--gallant-noether-78913e.netlify.app/",
+    bg: "#A5D2AF",
   },
 ];
 function Work() {
@@ -32,7 +32,7 @@ function Work() {
       <Container>
         <CodeText>HELLO</CodeText>
         <Space height={25} />
-        <Copy width={'Sinisa Colic is a front-end developer,'.length}>
+        <Copy width={"Sinisa Colic is a front-end developer,".length}>
           <StyledTitle>
             Sinisa Colic is a front-end developer,
             <br /> building functional and intuitive websites.

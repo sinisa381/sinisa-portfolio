@@ -1,26 +1,26 @@
-import styled from 'styled-components';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Container from './components/Container';
-import { Space } from './components/Space';
-import About from './pages/About';
-import Work from './pages/Work';
-import Contact from './pages/Contact';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import Text from './components/Text';
+import styled from "styled-components";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Container from "./components/Container";
+import { Space } from "./components/Space";
+import About from "./pages/About";
+import Work from "./pages/Work";
+import Contact from "./pages/Contact";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import Text from "./components/Text";
 
 const NAV_DATA = [
   {
-    text: 'work',
-    linkTo: '/',
+    text: "work",
+    linkTo: "/",
   },
   {
-    text: 'about',
-    linkTo: '/about',
+    text: "about",
+    linkTo: "/about",
   },
   {
-    text: 'contact',
-    linkTo: '/contact',
+    text: "contact",
+    linkTo: "/contact",
   },
 ];
 
@@ -48,7 +48,7 @@ function App() {
       <Footer>
         <Container>
           <FooterWrapper>
-            <StyledText>sinisa.colic89@gmail.com</StyledText>
+            <StyledText>&copy; Sinisa Colic</StyledText>
           </FooterWrapper>
         </Container>
       </Footer>
@@ -71,9 +71,8 @@ const Wrapper = styled.div`
 `;
 
 const FooterWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  display: grid;
+  place-items: center;
 `;
 
 const StyledText = styled(Text)`

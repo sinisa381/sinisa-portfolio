@@ -1,9 +1,8 @@
-import styled from 'styled-components';
-import Text, { Title as CardTitle } from '../../components/Text';
-import Container from '../../components/Container';
-import { Space } from '../../components/Space';
+import styled from "styled-components";
+import Text, { Title as CardTitle } from "../../components/Text";
+import Container from "../../components/Container";
+import { Space } from "../../components/Space";
 export default function Card({ bg, src, title, text, href, order }) {
-  console.log(order);
   return (
     <Wrapper>
       <ImageWrapper bg={bg} order={order}>
@@ -29,8 +28,7 @@ export default function Card({ bg, src, title, text, href, order }) {
 const Block = styled.div`
   max-width: 450px;
   width: 100%;
-  /* flex-grow: 1; */
-  margin-left: ${({ order }) => order === 0 && 'auto'};
+  margin-left: ${({ order }) => order === 0 && "auto"};
   @media (max-width: 900px) {
     margin-left: 0;
   }
@@ -51,22 +49,22 @@ const Wrapper = styled.div`
   }
 `;
 const Image = styled.img`
-  max-width: 341px;
+  max-width: 441px;
   width: 100%;
   /* height: 269px; */
 `;
 const ImageWrapper = styled.div`
   order: ${({ order }) => order === 1 && 2};
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     order: 0;
   }
   display: flex;
   justify-content: center;
   align-items: center;
   background: ${({ bg }) => bg && bg};
-  padding: 83px 109px;
+  padding: 43px 69px;
   @media (max-width: 1024px) {
-    padding: 43px 69px;
+    padding: 23px 39px;
   }
 `;
 

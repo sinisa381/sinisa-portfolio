@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 export default function Container({ children, className }) {
   return (
@@ -20,7 +20,4 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0;
-  @media (max-width: 1024px) {
-    margin: 0 15px;
-  }
 `;
