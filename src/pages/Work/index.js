@@ -3,6 +3,7 @@ import Text from "../../components/Text";
 import { Space } from "../../components/Space";
 import Card from "../../components/Card";
 import Container from "../../components/Container";
+
 const CARDS = [
   {
     src: "/ofish.png",
