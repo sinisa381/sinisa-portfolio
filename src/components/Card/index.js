@@ -8,43 +8,56 @@ export default function Card({ bg, src, title, text, href, order }) {
   const isMobile = width < 1000;
   return (
     <>
-      <Wrapper>
-        <ImageWrapper bg={bg} order={order}>
-          <Image src={src} />
-        </ImageWrapper>
-        <Spacer order={order} width={60} />
-        <Padding>
-          <StyledContainer>
-            <Block order={order}>
-              <Title>{title}</Title>
-              <StyledSpace height={60} />
-              <StyledText>{text}</StyledText>
-              {!isMobile && (
-                <>
-                  <Space height={20} />
-                  <Button href={href} target="_blank" rel="noopener noreferrer">
-                    <ButtonText as="span">View site</ButtonText>
-                  </Button>
-                </>
-              )}
-              <StyledSpace height={20} />
-            </Block>
-          </StyledContainer>
-        </Padding>
-      </Wrapper>
-      {isMobile && (
-        <Padding>
-          <Space height={20} />
-          <Button href={href} target="_blank" rel="noopener noreferrer">
-            <ButtonText as="span">View site</ButtonText>
-          </Button>
-        </Padding>
-      )}
+      <Outer order={order}>
+        <Wrapper>
+          <ImageWrapper bg={bg} order={order}>
+            <Image src={src} />
+          </ImageWrapper>
+          <Spacer order={order} width={25} />
+          <Padding>
+            <StyledContainer>
+              <Block order={order}>
+                <Title>{title}</Title>
+                <StyledSpace height={60} />
+                <StyledText>{text}</StyledText>
+                {!isMobile && (
+                  <>
+                    <Space height={20} />
+                    <Button
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ButtonText as="span">View site</ButtonText>
+                    </Button>
+                  </>
+                )}
+                <StyledSpace height={20} />
+              </Block>
+            </StyledContainer>
+          </Padding>
+        </Wrapper>
+        {isMobile && (
+          <Padding>
+            <Space height={20} />
+            <Button href={href} target="_blank" rel="noopener noreferrer">
+              <ButtonText as="span">View site</ButtonText>
+            </Button>
+          </Padding>
+        )}
+      </Outer>
     </>
   );
 }
 
+const Outer = styled.div`
+  margin-left: ${({ order }) => order === 1 && "auto"};
+  margin-right: ${({ order }) => order === 0 && "auto"};
+`;
+
 const StyledContainer = styled.div`
+  max-width: 446px;
+  width: 100%;
   @media (max-width: 1000px) {
     margin: 0 auto;
   }
@@ -54,7 +67,7 @@ const Padding = styled.div`
 `;
 
 const Block = styled.div`
-  max-width: 440px;
+  max-width: 446px;
   width: 100%;
   display: flex;
   justify-content: flex-start;

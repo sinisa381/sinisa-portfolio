@@ -1,6 +1,4 @@
 import { useLayoutEffect, useState, createContext } from "react";
-import throttle from "lodash/throttle";
-console.log(throttle);
 
 export const ViewportContext = createContext({});
 
