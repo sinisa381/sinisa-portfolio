@@ -63,16 +63,16 @@ function Work() {
 }
 
 const Flex = styled.div`
-  /* display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; */
-  width: 100%;
+  flex-direction: column;
+  /* width: 100%;
   max-width: 1150px;
   justify-self: center;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr); */
 `;
 
 export default Work;

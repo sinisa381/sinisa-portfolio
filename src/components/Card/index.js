@@ -86,7 +86,7 @@ const Wrapper = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex-wrap: nowrap;
-  @media (max-width: 1000px) {
+  @media (max-width: 800px) {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
