@@ -12,4 +12,9 @@ const Svg = styled.svg`
   position:absolute;
   top:0; bottom:0; left:0; right:0;
   transform: translate(-50px, 120px);
+  @media (max-width: 768px){
+    path {
+      fill-opacity: 0.06;
+    }
+  }
 `;
