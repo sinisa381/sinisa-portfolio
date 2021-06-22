@@ -14,7 +14,7 @@ const Svg = styled.svg`
   transform: translate(-50px, 120px);
   @media (max-width: 768px){
     path {
-      fill-opacity: 0.06;
+      fill-opacity: 0;
     }
   }
 `;
