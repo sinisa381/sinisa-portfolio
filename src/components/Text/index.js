@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 function Text({ children, as, ...props }) {
   return (
@@ -8,6 +8,8 @@ function Text({ children, as, ...props }) {
   );
 }
 
+export default Text;
+
 export const Title = ({ children, as, ...props }) => {
   return (
     <Wrapper {...props}>
@@ -15,13 +17,16 @@ export const Title = ({ children, as, ...props }) => {
     </Wrapper>
   );
 };
-export default Text;
 
 const Wrapper = styled.div`
   position: relative;
+  font-style: normal;
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : 400)};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : 18)}px;
-  color: ${({ color }) => (color ? color : '#000000')};
+  color: ${({ color }) => (color ? color : "#000000")};
+  font-family: ${({ fontFamily }) => (fontFamily ? fontFamily : "Raleway")};
+  line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : 42)}px;
+  text-align: ${({ textAlign }) => (textAlign ? textAlign : "left")};
 `;
 
 const Content = styled.p`
@@ -32,7 +37,7 @@ const ContentTitle = styled(Content)`
   @media (max-width: 1024px) {
     font-size: 80%;
   }
-  @media (max-width: 1024px) {
-    font-size: 60%;
+  @media (max-width: 380px) {
+    font-size: 70%;
   }
 `;

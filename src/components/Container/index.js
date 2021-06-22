@@ -7,10 +7,8 @@ export default function Container({ children, className }) {
 
 const Wrapper = styled.div`
   width: 100%;
-  max-width: 1150px;
-  margin: 0;
-  margin: 0;
-  @media (max-width: 1024px) {
-    margin: 0 15px;
-  }
+  max-width: 1142px;
+  /* @media (max-width: 1024px) {
+    padding: 0 15px;
+  } */
 `;

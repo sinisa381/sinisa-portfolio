@@ -1,22 +1,24 @@
 import styled from "styled-components";
 import Text from "../../components/Text";
 import { Space } from "../../components/Space";
-import Card from "../../components/Card";
+import { CardRight, CardLeft } from "../../components/Card";
+import Container from "../../components/Container";
+import Margin from "../../components/Margin";
 
 const CARDS = [
   {
     src: "/ofish.png",
     title: "O Fish",
-    text: "O Fish, designed to be a fish shop, is one of the projects I coded when working at Creative Development Hub - TheHive.rs",
+    text: "O Fish, designed to be a fish shop, is one of the projects I coded when working at Creative Development Hub - TheHive.",
     href: "https://ofish.thehive.rs/",
-    bg: "rgba(135, 198, 255, 0.5);",
+    bg: "rgba(135, 198, 255, 0.5)",
   },
   {
     src: "/packman.png",
     title: "Podcast Website",
     text: "Website coded as a platform to easily and quickly deliver packages throughout the city and much more. This project was done as a part of the team at Creative Development Hub - TheHive.",
     href: "https://vibrant-borg-fc07a5.netlify.app/",
-    bg: "rgba(248, 203, 87, 0.8)",
+    bg: "rgba(253, 213, 40, 0.5)",
   },
   {
     src: "/marija.png",
@@ -28,37 +30,46 @@ const CARDS = [
 ];
 function Work() {
   return (
-    <div>
-      <Padding>
+    <FullWidth>
+      <Container>
+      <Margin>
         <CodeText>HELLO</CodeText>
+      </Margin>
+      </Container>
         <Space height={25} />
-        <Copy width={"Sinisa Colic is a front-end developer,".length}>
+      <Container>
+        <Margin>
+        <Copy>
           <StyledTitle>
             Sinisa Colic is a front-end developer,
             <br /> building functional and intuitive websites.
           </StyledTitle>
         </Copy>
-      </Padding>
+        </Margin>
+      </Container>
       <StyledSpace height={40} />
-      <Padding>
-        <SkillsWrapper>
-          <SkillsText>REACT</SkillsText>
-          <Line />
-          <SkillsText>JAVASCRIPT</SkillsText>
-          <Line />
-          <SkillsText>SCSS</SkillsText>
-        </SkillsWrapper>
-      </Padding>
+      <Container>
+        <Margin>
+          <SkillsWrapper>
+            <SkillsText>REACT</SkillsText>
+            <Line />
+            <SkillsText>JAVASCRIPT</SkillsText>
+            <Line />
+            <SkillsText>SCSS</SkillsText>
+          </SkillsWrapper>
+        </Margin>
+      </Container>
       <StyledSpace height={219} maxHeight={120} />
       <Flex>
-        {CARDS.map((card, i) => (
-          <div key={i}>
-            <Card key={i} {...card} order={i % 2} />
-            <StyledSpace height={145} maxHeight={90} />
-          </div>
-        ))}
+        {CARDS.map((card, i) => {
+          if (i % 2 === 0) {
+            return <CardLeft key={i} {...card} />;
+          } else {
+            return <CardRight key={i} {...card} />;
+          }
+        })}
       </Flex>
-    </div>
+    </FullWidth>
   );
 }
 
@@ -67,12 +78,6 @@ const Flex = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* width: 100%;
-  max-width: 1150px;
-  justify-self: center;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr); */
 `;
 
 export default Work;
@@ -89,6 +94,7 @@ const CodeText = styled(Text)`
   line-height: 21px;
   letter-spacing: 0.2em;
   color: rgba(49, 49, 49, 0.8);
+  width: 100%;
 `;
 
 const SkillsText = styled(Text)`
@@ -101,6 +107,7 @@ const SkillsText = styled(Text)`
 `;
 
 const StyledTitle = styled(Text)`
+  /* margin: 0 15px; */
   font-family: Raleway;
   font-style: normal;
   font-weight: 500;
@@ -118,6 +125,7 @@ const SkillsWrapper = styled.div`
   align-items: center;
   max-width: 296px;
   width: 100%;
+  align-self: flex-start;
 `;
 
 const Line = styled.div`
@@ -125,6 +133,9 @@ const Line = styled.div`
   width: 30px;
   background: rgba(49, 49, 49, 0.5);
   margin: 0px 15px;
+  @media (max-width: 900px) {
+    margin: 0px 15px;
+  }
 `;
 
 const StyledSpace = styled(Space)`
@@ -133,6 +144,10 @@ const StyledSpace = styled(Space)`
   }
 `;
 
-const Padding = styled.div`
-  padding: 0 15px;
+const FullWidth = styled.div`
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
 `;

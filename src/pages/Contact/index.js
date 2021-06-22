@@ -1,21 +1,24 @@
-import styled from 'styled-components';
-import Container from '../../components/Container';
-import Mail from '../../components/Mail';
-import Text from '../../components/Text';
-import { StyledTitle } from '../About';
-import { Space } from '../../components/Space';
+import styled from "styled-components";
+import Container from "../../components/Container";
+import Margin from "../../components/Margin";
+import Mail from "../../components/Mail";
+import Text from "../../components/Text";
+import { StyledTitle } from "../About";
+import { Space } from "../../components/Space";
 function Contact() {
   return (
     <Container>
-      <Wrapper>
-        <StyledTitle>Lets work together!</StyledTitle>
-        <Space height={100} />
-        <FlexBox>
-          <Mail />
-          <Space width={10} />
-          <StyledText>sinisa.colic89@gmail.com</StyledText>
-        </FlexBox>
-      </Wrapper>
+      <Margin>
+        <Wrapper>
+          <StyledTitle>Let's work together!</StyledTitle>
+          <Space height={100} />
+          <FlexBox>
+            <Mail />
+            <Space width={10} />
+            <StyledText>sinisa.colic89@gmail.com</StyledText>
+          </FlexBox>
+        </Wrapper> 
+      </Margin>
     </Container>
   );
 }

@@ -27,46 +27,64 @@ const NAV_DATA = [
 
 function App() {
   return (
-    <ViewportProvider>
-      <Wrapper>
-        <Space height={17} />
-        <Router>
-          <Container>
-            <Navigation data={NAV_DATA} />
-          </Container>
-          <StyledSpace height={167} />
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/">
-              <Work />
-            </Route>
-          </Switch>
-        </Router>
+    <Bg>
+      <ViewportProvider>
+        <Wrapper>
+          <Space height={17} />
+          <Router>
+            <Container>
+              <Navigation data={NAV_DATA} />
+            </Container>
+            <StyledSpace height={167} />
+            <Switch>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/contact">
+                <Contact />
+              </Route>
+              <Route path="/">
+                <Work />
+              </Route>
+            </Switch>
+          </Router>
+        </Wrapper>
         <Footer>
           <StyledText>&copy; Sinisa Colic</StyledText>
         </Footer>
-      </Wrapper>
-    </ViewportProvider>
+      </ViewportProvider>
+    </Bg>
   );
 }
 
 export default App;
 
+const Bg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+  z-index: 100000000;
+  overflow: hidden;
+`;
+
 const Wrapper = styled.div`
   min-height: 100vh;
+  max-width: 1142px;
   width: 100%;
   height: 100%;
   background: #f4f4f4;
   font-family: Poppins, sans-serif;
-  display: flex;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; */
+  /* margin: 0 auto; */
 `;
 
 const StyledText = styled(Text)`

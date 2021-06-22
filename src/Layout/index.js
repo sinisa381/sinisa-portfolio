@@ -1,3 +1,10 @@
+import { createGlobalStyle } from "styled-components";
+import reset from "reset-css";
+
+const GlobalStyle = createGlobalStyle`
+
+${reset}
+
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -14,12 +21,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+`;
 
-header,
-nav {
-  width: 100%;
-}
-
-* {
-  width: 100%;
-}
+const Layout = ({ children }) => (
+  <>
+    <GlobalStyle />
+    {children}
+  </>
+);
+export default Layout;

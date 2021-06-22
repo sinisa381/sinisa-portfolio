@@ -1,12 +1,14 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, AnimateSharedLayout } from 'framer-motion';
-import styled from 'styled-components';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { motion, AnimateSharedLayout } from "framer-motion";
+import Container from "../Container";
+import Margin from "../Margin";
+import styled from "styled-components";
 function Navigation({ data }) {
   const [selected, setSelected] = useState(0);
   return (
-    <header>
-      <nav>
+    <Container as='header'>
+      <Margin as='nav'>
         <NavigationContainer>
           <AnimateSharedLayout>
             {data.map((item, i) => (
@@ -19,8 +21,8 @@ function Navigation({ data }) {
             ))}
           </AnimateSharedLayout>
         </NavigationContainer>
-      </nav>
-    </header>
+      </Margin>
+    </Container>
   );
 }
 export default Navigation;
