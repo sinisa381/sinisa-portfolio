@@ -74,9 +74,7 @@ const Image = styled.img`
   }
 `;
 const ImageWrapper = styled.div`
-  background: ${({ bg }) => bg && bg};
-  border-radius: 10px;
-  padding: 43px 55px;
+  /* background: ${({ bg }) => bg && bg}; */
   @media (max-width: 768px) {
     padding: 0;
     border-radius: 0px;
