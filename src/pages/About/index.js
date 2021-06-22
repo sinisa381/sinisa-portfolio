@@ -6,6 +6,7 @@ import Container from "../../components/Container";
 import Computers from "../../components/Computers";
 import Margin from "../../components/Margin";
 import { ViewportContext } from '../../context'
+import Background from '../../components/SvgBackground'
 const CARDS = [
   "React",
   "Javascript",
@@ -27,7 +28,10 @@ function About() {
           <Wrapper>
             <TextWrapper>
               <Container>
-                <StyledTitle textAlign="left">About Sinisa</StyledTitle>
+                <StyledTitle style={{ position: 'relative' }} textAlign="left">
+                  <Background />
+                  About Sinisa
+                </StyledTitle>
                 <StyledSpace height={40} />
                 <StyledText>
                   Hi! I am a self taught front-end developer. I have around four
