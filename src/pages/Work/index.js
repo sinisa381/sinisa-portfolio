@@ -94,7 +94,7 @@ const CodeText = styled(Text)`
   font-size: 14px;
   line-height: 21px;
   letter-spacing: 0.2em;
-  color: rgba(49, 49, 49, 0.8);
+  color: rgba(49, 49, 49, 0.6);
   width: 100%;
 `;
 
@@ -104,7 +104,7 @@ const SkillsText = styled(Text)`
   font-size: 14px;
   line-height: 21px;
   letter-spacing: 0.04em;
-  color:rgba(49, 49, 49, 0.8);
+  color:rgba(49, 49, 49, 0.6);
 `;
 
 const StyledTitle = styled(Text)`
