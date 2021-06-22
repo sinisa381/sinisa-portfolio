@@ -9,7 +9,7 @@ import Margin from "../Margin";
 
 const CardLeft = (props) => {
   const { width } = useContext(ViewportContext);
-  const isMobile = width < 900;
+  const isMobile = width < 768;
   if (isMobile) {
     return <CardMobile {...props} />;
   } else {
@@ -64,16 +64,12 @@ const Block = styled.div`
   align-items: flex-end;
   flex-direction: column;
   text-align: right;
-  @media (max-width: 1000px) {
-    align-items: flex-start;
-    text-align: left;
-  }
 `;
 
 const Wrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-end;
   flex-wrap: nowrap;
 `;
 const Image = styled.img`
@@ -134,6 +130,7 @@ const StyledText = styled(Text)`
   display: flex;
   align-items: center;
   color: #313131;
+  text-align:right;
 `;
 
 const ButtonText = styled(Text)`

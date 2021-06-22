@@ -62,14 +62,14 @@ const Block = styled.div`
 const Wrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
 `;
 const Image = styled.img`
   max-width: 361px;
   width: 100%;
   box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
-  @media (max-width: 380px) {
+  @media (max-width: 768px) {
     max-width: 100%;
   }
 `;
@@ -77,8 +77,9 @@ const ImageWrapper = styled.div`
   background: ${({ bg }) => bg && bg};
   border-radius: 10px;
   padding: 43px 55px;
-  @media (max-width: 400px) {
+  @media (max-width: 768px) {
     padding: 0;
+    border-radius: 0px;
   }
 `;
 
@@ -88,7 +89,7 @@ const Button = styled.a`
   justify-content: center;
   text-decoration: none;
   align-items: center;
-  padding: 0px 14px;
+  padding: 0px 44px;
   border: 2px solid rgba(49, 49, 49, 0.5);
   filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.05));
   border-radius: 5px;

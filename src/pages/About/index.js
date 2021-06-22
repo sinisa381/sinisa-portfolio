@@ -5,7 +5,7 @@ import { Space } from "../../components/Space";
 import Container from "../../components/Container";
 import Computers from "../../components/Computers";
 import Margin from "../../components/Margin";
-import {ViewportContext} from '../../context'
+import { ViewportContext } from '../../context'
 const CARDS = [
   "React",
   "Javascript",
@@ -54,9 +54,7 @@ function About() {
               </Container>
             </TextWrapper>
             <StyledSpace width={50} maxHeight={100} height={0} />
-            <ImageWrapper bg={"rgba(49, 49, 49, 0.4)"}>
-              <Image src={"/imac.jpg"} />
-            </ImageWrapper>
+            <Image src="/tech.png" />
           </Wrapper>
         </Margin>
         <StyledSpace height={90} maxHeight={50} />
@@ -151,21 +149,10 @@ const StyledText = styled(Text)`
 const Image = styled.img`
   max-height: 483px;
   height: 100%;
-  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
-`;
-const ImageWrapper = styled.div`
-  display: flex;
-  border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-  background: ${({ bg }) => bg && bg};
-  padding: 66px 56px;
-  @media (max-width: 1024px) {
-    padding: 47px 36px;
-  }
-  @media (max-width: 800px) {
-    padding: 0;
-  }
+  align-self: flex-end;
+  object-fit: contain;
+  max-width: 522px;
+  width: 100%;
 `;
 
 const Title = styled(CardTitle)`

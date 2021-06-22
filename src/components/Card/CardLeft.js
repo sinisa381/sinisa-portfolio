@@ -9,12 +9,12 @@ import Margin from "../Margin";
 
 const CardLeft = (props) => {
   const { width } = useContext(ViewportContext);
-  const isMobile = width < 900;
+  const isMobile = width < 768;
   if (isMobile) {
     return <CardMobile {...props} />;
   } else {
     return (
-      <Container>
+      <MainContainer>
         <Wrapper>
           <ImageWrapper bg={props.bg}>
             <Image src={props.src} />
@@ -41,7 +41,7 @@ const CardLeft = (props) => {
           <Space width={98} />
         </Wrapper>
         <StyledSpace height={145} />
-      </Container>
+      </MainContainer>
     );
   }
 };
@@ -51,9 +51,6 @@ export default CardLeft;
 const StyledContainer = styled.div`
   max-width: 446px;
   width: 100%;
-  @media (max-width: 1000px) {
-    margin: 0 auto;
-  }
 `;
 
 const Block = styled.div`
@@ -64,16 +61,12 @@ const Block = styled.div`
   align-items: flex-start;
   flex-direction: column;
   text-align: left;
-  @media (max-width: 1000px) {
-    align-items: flex-start;
-    text-align: left;
-  }
 `;
 
 const Wrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: nowrap;
 `;
 const Image = styled.img`
@@ -151,4 +144,8 @@ const StyledSpace = styled(Space)`
   @media (max-width: 1000px) {
     height: 40px;
   }
+`;
+
+const MainContainer = styled(Container)`
+  justify-self: flex-start;
 `;

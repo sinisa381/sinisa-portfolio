@@ -15,15 +15,15 @@ const CARDS = [
   },
   {
     src: "/packman.png",
-    title: "Podcast Website",
-    text: "Website coded as a platform to easily and quickly deliver packages throughout the city and much more. This project was done as a part of the team at Creative Development Hub - TheHive.",
+    title: "Packman",
+    text: "Website coded as a presentation for app which can easily and quickly deliver packages throughout the city and much more. This project was done as being a part of the team at Creative Development Hub - TheHive.",
     href: "https://vibrant-borg-fc07a5.netlify.app/",
     bg: "rgba(253, 213, 40, 0.5)",
   },
   {
     src: "/marija.png",
-    title: "O Fish",
-    text: "Initial idea of the website was to help users to customize gifts for loved ones. I was involved in the project during my freelance time.",
+    title: "Gift Shop",
+    text: "Initial idea of the website was to help users customize gifts for loved ones. I was involved in the project during my freelance time.",
     href: "https://60cd14c1bc28c9949d0ff968--gallant-noether-78913e.netlify.app/",
     bg: "#A5D2AF",
   },
@@ -75,6 +75,7 @@ function Work() {
 
 const Flex = styled.div`
   display: flex;
+  width:100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -103,7 +104,7 @@ const SkillsText = styled(Text)`
   font-size: 14px;
   line-height: 21px;
   letter-spacing: 0.04em;
-  color: #313131;
+  color:rgba(49, 49, 49, 0.8);
 `;
 
 const StyledTitle = styled(Text)`

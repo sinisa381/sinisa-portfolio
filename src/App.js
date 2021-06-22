@@ -77,14 +77,6 @@ const Wrapper = styled.div`
   height: 100%;
   background: #f4f4f4;
   font-family: Poppins, sans-serif;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column; */
-  /* margin: 0 auto; */
 `;
 
 const StyledText = styled(Text)`
