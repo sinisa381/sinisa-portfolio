@@ -148,4 +148,5 @@ const StyledSpace = styled(Space)`
 
 const MainContainer = styled(Container)`
   justify-self: flex-start;
+  width:100%;
 `;

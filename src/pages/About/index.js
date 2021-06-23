@@ -42,7 +42,7 @@ function About() {
                 </StyledText>
                 <Space height={23} />
                 <StyledText>
-                  Focused on clients needs by creating robust websites with a
+                  Focused on clients' needs by creating robust websites with a
                   complex functionality and applying various animations. Working
                   both as a freelancer and employee has taught me what it really
                   means to have a good collaboration and a strong teamwork.
