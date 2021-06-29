@@ -130,7 +130,7 @@ const StyledText = styled(Text)`
   display: flex;
   align-items: center;
   color: #313131;
-  text-align:right;
+  text-align: right;
 `;
 
 const ButtonText = styled(Text)`

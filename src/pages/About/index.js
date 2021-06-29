@@ -1,12 +1,12 @@
-import { useContext } from 'react'
+import { useContext } from "react";
 import styled from "styled-components";
 import Text, { Title as CardTitle } from "../../components/Text";
 import { Space } from "../../components/Space";
 import Container from "../../components/Container";
 import Computers from "../../components/Computers";
 import Margin from "../../components/Margin";
-import { ViewportContext } from '../../context'
-import Background from '../../components/SvgBackground'
+import { ViewportContext } from "../../context";
+import Background from "../../components/SvgBackground";
 const CARDS = [
   "React",
   "Javascript",
@@ -28,11 +28,11 @@ function About() {
           <Wrapper>
             <TextWrapper>
               <Container>
-                <StyledTitle style={{ position: 'relative' }} textAlign="left">
+                <StyledTitle style={{ position: "relative" }} textAlign="left">
                   <Background />
                   About Sinisa
                 </StyledTitle>
-                <StyledSpace height={40} />
+                <StyledSpace height={60} maxHeight={40} />
                 <StyledText>
                   Hi! I am a self taught front-end developer. I have around four
                   years of experience coding responsive and user-friendly
@@ -57,43 +57,43 @@ function About() {
                 </StyledText>
               </Container>
             </TextWrapper>
-            <StyledSpace width={50} maxHeight={100} height={0} />
+            <StyledSpace width={50} maxHeight={40} height={60} />
             <Image src="/tech.png" />
           </Wrapper>
         </Margin>
-        <StyledSpace height={90} maxHeight={50} />
+        <StyledSpace height={60} maxHeight={40} />
       </Container>
       <Container>
         <Margin>
           <Title>Technologies</Title>
         </Margin>
-        <StyledSpace height={63} maxHeight={30} />
-      <Container>
-        <Margin>
-          <Wrapper>
-            <ul>
-              {CARDS.slice(0, 5).map((tech, i, arr) => (
-                <StyledText
-                  key={i}
-                  style={{ marginBottom: i !== arr.length && "25px" }}
-                >
-                  {tech}
-                </StyledText>
-              ))}
-            </ul>
-            {isMobile && <div style={{margin:'0 auto'}}></div>}
-            <ul>
-              {CARDS.slice(5).map((tech, i, arr) => (
-                <StyledText
-                  key={i}
-                  style={{ marginBottom: i !== arr.length && "25px" }}
-                >
-                  {tech}
-                </StyledText>
-              ))}
-            </ul>
-          <Computers />
-        </Wrapper>
+        <StyledSpace height={60} maxHeight={40} />
+        <Container>
+          <Margin>
+            <Wrapper>
+              <ul>
+                {CARDS.slice(0, 5).map((tech, i, arr) => (
+                  <StyledText
+                    key={i}
+                    style={{ marginBottom: i !== arr.length && "25px" }}
+                  >
+                    {tech}
+                  </StyledText>
+                ))}
+              </ul>
+              {isMobile && <div style={{ margin: "0 auto" }}></div>}
+              <ul>
+                {CARDS.slice(5).map((tech, i, arr) => (
+                  <StyledText
+                    key={i}
+                    style={{ marginBottom: i !== arr.length && "25px" }}
+                  >
+                    {tech}
+                  </StyledText>
+                ))}
+              </ul>
+              <Computers />
+            </Wrapper>
           </Margin>
         </Container>
       </Container>

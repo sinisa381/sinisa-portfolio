@@ -7,6 +7,10 @@ const CardMobile = ({ bg, src, title, text, href }) => {
   return (
     <Outer>
       <Wrapper>
+        <Space width={25} />
+        <ImageWrapper bg={bg}>
+          <Image src={src} />
+        </ImageWrapper>
         <Margin>
           <Title fontSize={36} fontWeight={500}>
             {title}
@@ -16,10 +20,6 @@ const CardMobile = ({ bg, src, title, text, href }) => {
           <Space height={15} />
           <StyledContainer></StyledContainer>
         </Margin>
-        <Space width={25} />
-        <ImageWrapper bg={bg}>
-          <Image src={src} />
-        </ImageWrapper>
         <Block>
           <Margin>
             <Space height={15} />
@@ -74,7 +74,6 @@ const Image = styled.img`
   }
 `;
 const ImageWrapper = styled.div`
-  /* background: ${({ bg }) => bg && bg}; */
   @media (max-width: 768px) {
     padding: 0;
     border-radius: 0px;
