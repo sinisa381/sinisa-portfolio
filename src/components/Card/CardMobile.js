@@ -11,6 +11,7 @@ const CardMobile = ({ bg, src, title, text, href }) => {
         <ImageWrapper bg={bg}>
           <Image src={src} />
         </ImageWrapper>
+        <Space height={20} />
         <Margin>
           <Title fontSize={36} fontWeight={500}>
             {title}
@@ -29,7 +30,7 @@ const CardMobile = ({ bg, src, title, text, href }) => {
           </Margin>
         </Block>
       </Wrapper>
-      <Space height={65} />
+      <Space height={110} />
     </Outer>
   );
 };
