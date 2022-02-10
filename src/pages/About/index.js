@@ -1,12 +1,11 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import Text, { Title as CardTitle } from "../../components/Text";
-import { Space } from "../../components/Space";
-import Container from "../../components/Container";
 import Computers from "../../components/Computers";
+import Container from "../../components/Container";
 import Margin from "../../components/Margin";
+import { Space } from "../../components/Space";
+import Text, { Title as CardTitle } from "../../components/Text";
 import { ViewportContext } from "../../context";
-import Background from "../../components/SvgBackground";
 const CARDS = [
   "React",
   "Javascript",
@@ -29,31 +28,26 @@ function About() {
             <TextWrapper>
               <Container>
                 <StyledTitle style={{ position: "relative" }} textAlign="left">
-                  <Background />
                   About Sinisa
                 </StyledTitle>
                 <StyledSpace height={60} maxHeight={40} />
                 <StyledText>
-                  Hi! I am a self taught front-end developer. I have around four
-                  years of experience coding responsive and user-friendly
-                  websites. Curious by nature, I have always been oriented on
-                  tasks that require problem solving and thinking out of the box
-                  solutions.
+                  Hi! I am a front-end developer coding responsive and
+                  user-friendly websites and web applications. Curious by
+                  nature, I have always been oriented on tasks that require
+                  problem solving and thinking out of the box solutions.
                 </StyledText>
                 <Space height={23} />
                 <StyledText>
                   Focused on clients' needs by creating robust websites with a
-                  complex functionality and applying various animations. Working
-                  both as a freelancer and employee has taught me what it really
-                  means to have a good collaboration and a strong teamwork.
+                  complex functionality and applying various animations. The
+                  experience working in this area has taught me how important it
+                  is to have a good collaboration, strong teamwork and
+                  opportunities to bring projects into reality.
                 </StyledText>
                 <Space height={23} />
                 <StyledText>
-                  Besides development, I am passionate about basketball and
-                  cryptocurrency.
                   <br />
-                  At the moment, I am working on some projects on the side and
-                  looking for new work opportunities.
                 </StyledText>
               </Container>
             </TextWrapper>
